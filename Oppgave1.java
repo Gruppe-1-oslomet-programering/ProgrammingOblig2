@@ -40,18 +40,20 @@ public class Oppgave1 {
             }
 
             if(nedre < øvre){
+
                     /*Når godkjente grenser er lest inn, skal programmet beregne nevnte sum og summen
                     skal så skrive den ut som en sum. Hvis f. eks. nedre grense er 2 og øvre grense er 8 skal det skrives ut
                     følgende tekst: "2 + 3 + 4 + 5 + 6 + 7 + 8 = 35"*/
+
                 int sum = nedre;
-                for(int l=nedre; l<øvre ;){
-                    for(int i=0;i<10;i++){
+                for(int l = nedre; l < øvre ;){
+                    for(int i = 0 ; i < 10 ; i++){
                         if(l < øvre){
                             System.out.print(l+++" + ");
                             sum += l;}
                     }
                     if(l == øvre){
-                        System.out.print(l+ " = "+sum);
+                        System.out.print(l+" = "+sum);
                     }
                     System.out.print("\n");
                 }
@@ -59,7 +61,4 @@ public class Oppgave1 {
             break;
         }
     }
-
-
-
 }
