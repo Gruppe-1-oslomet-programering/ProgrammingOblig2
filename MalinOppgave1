@@ -1,0 +1,78 @@
+package oblig2;
+
+
+import static javax.swing.JOptionPane.*;
+
+public class Oblig2 {
+    public static void main (String [] args){
+
+        String innNedre = showInputDialog("Skriv inn nedre grense");
+
+        int nedre;
+        try{
+            nedre = Integer.parseInt(innNedre);
+        }
+        catch (Exception e){
+            System.out.println(e);
+            showMessageDialog(null,"Feil i input, forsøk igjen");
+            nedre = 0;
+        }
+
+
+        String innØvre = showInputDialog("Skriv inn øvre grense");
+        int øvre;
+        try{
+            øvre = Integer.parseInt(innØvre);
+        }
+        catch (Exception e){
+            System.out.println(e);
+            showMessageDialog(null,"Feil i input, forsøk igjen");
+            øvre = 0;
+        }
+
+        while (øvre <= nedre){
+            showMessageDialog(null, "Øvre grense er mindre eller lik nedre grense.");
+            innNedre = showInputDialog("Skriv inn nedre grense");
+            try{
+                nedre = Integer.parseInt(innNedre);
+            }
+            catch (Exception e){
+                System.out.println(e);
+                showMessageDialog(null,"Feil i input, forsøk igjen");
+                nedre = 0;
+            }
+
+            innØvre = showInputDialog("Skriv inn øvre grense");
+            try{
+                øvre = Integer.parseInt(innØvre);
+            }
+            catch (Exception e){
+                System.out.println(e);
+                showMessageDialog(null,"Feil i input, forsøk igjen");
+                øvre = 0;
+            }
+        }
+            int sum = 0;
+        for (int i = nedre; i <= øvre; i++){
+
+            sum+= i;
+
+            if (i%10!=0) {
+                System.out.print(i + " + ");
+            }
+            else if (i%10==0 && i !=øvre) {
+                System.out.print(i+"\n+ ");
+            }
+
+            else{
+                System.out.print(i+"\n="+sum);
+            }
+
+
+
+            }
+        }
+
+
+
+    }
