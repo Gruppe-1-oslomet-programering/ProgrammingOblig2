@@ -8,24 +8,24 @@ public class Oblig2 {
 
         int nedre = 0;
         int øvre = -1;
-        int kontroll = 0;
+        boolean kontroll = true;
         String innNedre;
         String innØvre;
 
 
-        while (kontroll == 0) {
+        while (kontroll) {
             innNedre = showInputDialog("Skriv inn nedre grense");
             innØvre = showInputDialog("Skriv inn øvre grense");
             try {
                 nedre = Integer.parseInt(innNedre);
                 øvre = Integer.parseInt(innØvre);
-                kontroll = 1;
+                kontroll = false;
             } catch (Exception e) {
                 System.out.println(e);
                 showMessageDialog(null, "Feil i input, forsøk igjen");
                 nedre = 0;
                 øvre = 0;
-                kontroll = 0;
+                kontroll = true;
             }
         }
 
