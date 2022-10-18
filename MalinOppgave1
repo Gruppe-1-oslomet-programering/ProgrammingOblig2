@@ -6,8 +6,8 @@ import static javax.swing.JOptionPane.*;
 public class Oblig2 {
     public static void main (String [] args){
 
-        int nedre = 0;
-        int øvre = -1;
+        int nedre = -1;
+        int øvre = 0;
         boolean kontroll = true;
         String innNedre;
         String innØvre;
@@ -23,29 +23,19 @@ public class Oblig2 {
             } catch (Exception e) {
                 System.out.println(e);
                 showMessageDialog(null, "Feil i input, forsøk igjen");
-                nedre = 0;
+                nedre = -1;
                 øvre = 0;
+                kontroll = true;
+            }
+            if (øvre <= nedre){
+                showMessageDialog(null, "Øvre grense er mindre eller lik nedre grense.");
                 kontroll = true;
             }
         }
 
 
-        while (øvre <= nedre){
-            showMessageDialog(null, "Øvre grense er mindre eller lik nedre grense.");
-            innNedre = showInputDialog("Skriv inn nedre grense");
-            innØvre = showInputDialog("Skriv inn øvre grense");
-            try{
-                nedre = Integer.parseInt(innNedre);
-                øvre = Integer.parseInt(innØvre);
-            }
-            catch (Exception e){
-                System.out.println(e);
-                showMessageDialog(null,"Feil i input, forsøk igjen");
-                nedre = 0;
-            }
 
-        }
-            int sum = 0;
+        int sum = 0;
         for (int i = nedre; i <= øvre; i++){
 
             sum+= i;
@@ -63,9 +53,9 @@ public class Oblig2 {
 
 
 
-            }
         }
-
-
-
     }
+
+
+
+}
