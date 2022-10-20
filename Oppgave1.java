@@ -75,7 +75,7 @@ public class Oppgave1 {
         }
 
             difference = toppTall - bunnTall;
-            for (int i=0; i < difference; i++){
+            for (int i=0; i <= difference; i++){
                 tall = bunnTall + i;
                 sum.setTotal(sum.getTotal() + tall); //= sum.getTotal() + tall;
                 sum.setUt(sum.getUt()+ " +"+tall); //= sum.getUt() + " +"+tall ;
